@@ -1,0 +1,169 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+    box-sizing: border-box;
+}
+
+body {background-color: #000000}
+
+
+
+.container{
+    
+    width: 100%;
+    min-height: 100hv;
+    background-color: #000000;
+    padding: 10px 5%;   
+    
+    
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: solid; 
+    border-bottom-color: rgba(98, 5, 5, 0.61);
+    
+
+}
+.logo{
+    width: 120px;
+    cursor: pointer;
+    
+}
+
+nav ul{
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding-right: 60px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 2px 5px;
+    --glow-color: rgba(87, 8, 8, 0.78);
+    --glow-spread-color: rgba(87, 8, 8, 0.78);
+    --enhanced-glow-color: rgb(90, 7, 13);
+    --btn-color: rgb(93, 2, 2);
+    border: 0.25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 5px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),
+                inset 0 0 0.75em 0.25em var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+}
+
+nav ul li::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 70%;
+    width: 70%;
+    filter: blur(1em);
+    opacity: 0.3;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+nav ul li:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+        0 0 1em 2em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+nav ul li:active {
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset0 0 0 0.5em 0.25em var(--glow-color);
+}
+
+nav ul li a{
+    font-size: 15px;
+    font-weight: bolder;
+    color: #000000;
+    text-decoration: none;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+}
+
+
+
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.banner .slider{
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    top:10%;
+    left: calc(50% - 180px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 45s linear infinite;
+    z-index: 2;
+}
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px)rotateX(-16deg)rotateY(30deg);
+    }to{
+        transform: perspective(1000px)rotateX(-16deg) rotateY(360deg)
+    }
+    
+}
+.banner .slider .item{
+   position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(400px);
+}
+.banner .slider .item img{
+    width: 108%;
+    height: 108%;
+    object-fit: cover;
+    
+}
+
+.banner .content .model{
+    background-image: url(logos/stierchopf%20dunkelrot%20transparent.png);
+    width: 100%;
+    height: 85vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: auto 60%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1   
+}
+
+
+
+
+

@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    font-family: 'serif';
+    background-color: #000000;
+    background-image: url(images/stierchopf%20rotgrau%20transparent.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.Kontakt-box{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.Kontakt-links{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.Kontakt-links-titel h2{
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.Kontakt-links-titel hr{
+    border: none;
+    width: 230px;
+    height: 10px;
+    color: #500505;
+    background-color: #4f0101;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    
+}
+.Kontakt-input{
+    width: 400px;
+    height: 50px;
+    border: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #000000;
+    border-radius: 10px;
+    background-color: #770b23;
+}
+
+.Kontakt-links textarea{
+   height: 140px;
+    padding-top: 15px;
+    border-radius: 10px;   
+}
+
+.Kontakt-input:focus{
+    border: 6px solid #f48ea122;
+}
+
+.Kontakt-input::placeholder{
+    color: #000000;
+}
+
+.Kontakt-links button{
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #000000;
+    gap: 10px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #8d010b, #64040f, #64040f, #8d010b);
+    cursor: pointer;
+    background-color: #760810;
+}
