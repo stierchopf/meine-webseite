@@ -162,7 +162,7 @@ nav ul li a {
     .banner .slider .item {
         transform:
             rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-            translateZ(110px);
+            translateZ(130px);
     }
 
     .banner .slider .item img {
@@ -170,7 +170,7 @@ nav ul li a {
         height: 102%;
     }
     .banner .content .model {
-        background-size: auto 22%;
+        background-size: auto 25%;
     }
 }
 
@@ -187,7 +187,7 @@ nav ul li a {
     .banner .slider .item {
         transform:
             rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-            translateZ(110px);
+            translateZ(130px);
     }
 
     .banner .slider .item img {
@@ -195,6 +195,6 @@ nav ul li a {
         height: 102%;
     }
     .banner .content .model {
-        background-size: auto 22%;
+        background-size: auto 25%;
     }
 }
