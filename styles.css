@@ -154,7 +154,7 @@ nav ul li a {
 /* Media Query für Tablets und größere Smartphones */
 @media (max-width: 768px) {
     .banner .slider {
-        width: 100px;
+        width: 110px;
         height: 60px;
         left: calc(50% - 50px);
     }
@@ -162,7 +162,7 @@ nav ul li a {
     .banner .slider .item {
         transform:
             rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-            translateZ(100px);
+            translateZ(110px);
     }
 
     .banner .slider .item img {
@@ -179,7 +179,7 @@ nav ul li a {
 /* Media Query für sehr kleine Bildschirme */
 @media (max-width: 360px) {
     .banner .slider {
-        width: 100px;
+        width: 110px;
         height: 60px;
         left: calc(50% - 50px);
     }
@@ -187,7 +187,7 @@ nav ul li a {
     .banner .slider .item {
         transform:
             rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-            translateZ(100px);
+            translateZ(110px);
     }
 
     .banner .slider .item img {
