@@ -1,0 +1,393 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: serif;
+    background-color: black;
+    color: rgb(93, 2, 2);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.container {
+    width: 100%;
+    min-height: 10vh;
+    background-color: #000000;
+    padding: 15px 5%;
+}
+
+
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: solid;
+    border-bottom-color: rgba(98, 5, 5, 0.61);
+}
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding-right: 60px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 2px 5px;
+    --glow-color: rgba(87, 8, 8, 0.78);
+    --glow-spread-color: rgba(87, 8, 8, 0.78);
+    --enhanced-glow-color: rgb(90, 7, 13);
+    --btn-color: rgb(93, 2, 2);
+    border: 0.25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 5px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),
+                inset 0 0 0.75em 0.25em var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+}
+
+nav ul li::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 70%;
+    width: 70%;
+    filter: blur(1em);
+    opacity: 0.3;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+nav ul li:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+                0 0 1em 2em var(--glow-spread-color),
+                inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+nav ul li:active {
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+                0 0 2.5em 2em var(--glow-spread-color),
+                inset 0 0 0.5em 0.25em var(--glow-color);
+}
+
+nav ul li a {
+    font-size: 15px;
+    font-weight: bolder;
+    color: #000000;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 4em;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px;
+    max-width: 1200px;
+}
+
+a.open {
+    position: relative;
+    width: 24rem;
+    height: 16rem;
+    margin: 1.5rem;
+    overflow: hidden;
+    background: url('logos/stierchopf%20dunkelrot%20transparent.png') center no-repeat;
+    background-size: 0;
+    transition: background-size 0.9s ease;
+}
+
+a.open:hover {
+    background-size: 12rem;
+}
+
+a.open::before,
+a.open::after,
+a.close::before,
+a.close::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+a.open:nth-of-type(1)::before,
+a.open:nth-of-type(1)::after {
+    background-image: url('images/gallery/knife%20gallery/knife1.jpg');
+}
+
+a.open:nth-of-type(2)::before,
+a.open:nth-of-type(2)::after {
+    background-image: url('images/gallery/knife%20gallery/knife2.jpg');
+}
+
+a.open:nth-of-type(3)::before,
+a.open:nth-of-type(3)::after {
+    background-image: url('images/gallery/knife%20gallery/knife3.jpg');
+}
+
+a.open:nth-of-type(4)::before,
+a.open:nth-of-type(4)::after {
+    background-image: url('images/gallery/knife%20gallery/knife4.jpg');
+}
+
+a.open:nth-of-type(5)::before,
+a.open:nth-of-type(5)::after {
+    background-image: url('images/gallery/knife%20gallery/knife5.jpg');
+}
+
+a.open:nth-of-type(6)::before,
+a.open:nth-of-type(6)::after {
+    background-image: url('images/gallery/knife%20gallery/knife6.jpg');
+}
+
+a.open:nth-of-type(7)::before,
+a.open:nth-of-type(7)::after {
+    background-image: url('images/gallery/knife%20gallery/knife7.jpg');
+}
+
+a.open:nth-of-type(8)::before,
+a.open:nth-of-type(8)::after {
+    background-image: url('images/gallery/knife%20gallery/knife8.jpg');
+}
+
+a.open:nth-of-type(odd)::before {
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+}
+
+a.open:nth-of-type(odd)::after {
+    clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+a.open:nth-of-type(even)::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+a.open:nth-of-type(even)::after {
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+a.open:nth-of-type(odd):hover::before {
+    transform: translate(-2rem, -2rem);
+}
+
+a.open:nth-of-type(odd):hover::after {
+    transform: translate(2rem, 2rem);
+}
+
+a.open:nth-of-type(even):hover::before {
+    transform: translate(2rem, -2rem);
+}
+
+a.open:nth-of-type(even):hover::after {
+    transform: translate(-2rem, 2rem);
+}
+
+a.close:not(:target) {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+a.close:target {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+a.close {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a.close img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+a.close::before {
+    background-color: inherit;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: clip-path 1s ease;
+}
+
+a.close:nth-of-type(odd):target::before {
+    clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
+}
+
+a.close:nth-of-type(even):target::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 0);
+}
+
+.slideshow-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    touch-action: pan-y; /* Erlaubt vertikales Scrollen, blockt horizontales für Swipe */
+    overflow: hidden;
+}
+
+.slideshow-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 80%;
+    text-align: center;
+}
+
+.slideshow-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.slideshow-caption {
+    color: crimson;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.slideshow-nav {
+    position: absolute;
+    top: 85%;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slideshow-nav button {
+    background: rgb(0, 0, 0);
+    color: rgb(80, 3, 8);
+    border: 3px solid #860808;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 2.5em;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(41, 3, 3, 0.96);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.slideshow-nav button:hover {
+    background: rgb(80, 3, 8);
+    transform: scale(1.1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 35px;
+    right: 100px;
+    background: rgb(0, 0, 0);
+    border: 3px solid #860808;
+    color: rgb(80, 3, 8);
+    font-size: 1.8em;
+    padding: 5px 10px;
+    border-radius: 10%;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+}
+
+.close-btn:hover {
+    background: rgb(80, 3, 8);
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    a.open {
+        width: 18rem;
+        height: 12rem;
+        margin: 1rem;
+    }
+
+    .slideshow-content img {
+        max-height: 60vh;
+    }
+
+    .slideshow-nav button {
+        padding: 8px;
+        font-size: 1.2em;
+    }
+
+    .close-btn {
+        font-size: 1.5em;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 360px) {
+    a.open {
+        max-width: 11rem;
+        height: 5rem;
+        margin: 0.5rem auto;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .slideshow-content img {
+        max-height: 50vh;
+    }
+
+    .slideshow-nav button {
+        padding: 6px;
+        font-size: 1em;
+    }
+
+    .close-btn {
+        font-size: 1.3em;
+        padding: 4px;
+    }
+}
